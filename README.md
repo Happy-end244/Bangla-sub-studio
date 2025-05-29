@@ -1,2 +1,2 @@
-# Bangla-sub-studio
+# Bangla-sub-
 Anime lovers community with Bangla subtitles
