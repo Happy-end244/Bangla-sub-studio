@@ -2,48 +2,119 @@
 <html lang="bn">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>পেইড আবেদন | Bangla Sub Studio</title>
+  <title>Paid Form</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: Arial;
       background-color: #f5f5f5;
       margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #121212;
-      color: white;
-      padding: 15px;
-      text-align: center;
-      font-size: 20px;
+      padding: 20px;
     }
     .form-container {
-      padding: 20px;
-      max-width: 800px;
-      margin: 0 auto;
+      max-width: 500px;
+      margin: auto;
       background: white;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      padding: 25px;
       border-radius: 10px;
-      margin-top: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
-    iframe {
-      width: 100%;
-      height: 1000px;
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .bkash-box {
+      background-color: #ffe7d1;
+      padding: 10px;
+      border: 1px solid #ff9900;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+    }
+    .bkash-number {
+      font-size: 16px;
+      color: #cc3300;
+    }
+    .copy-btn {
+      padding: 5px 10px;
+      font-size: 13px;
+      background-color: #ff6600;
+      color: white;
       border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .copy-btn:hover {
+      background-color: #e65c00;
+    }
+    label {
+      font-size: 14px;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #0099ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover {
+      background-color: #007acc;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    পেইড গ্রুপে জয়েনের আবেদন ফর্ম
-  </header>
-
   <div class="form-container">
-    <!-- নিচের লাইনটা গুগল ফর্মের EMBED কোড দিয়ে Replace করবি -->
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSexampleFormLink/viewform?embedded=true" frameborder="0" allowfullscreen>Loading…</iframe>
+    <h2>নিম্নে উল্লেখিত বিকাশ নাম্বারে আপনার ফি পাঠিয়ে ফর্ম পূরণ করুন</h2>
+    
+    <div class="bkash-box">
+      <span class="bkash-number" id="bkashNum">01887852687</span>
+      <button class="copy-btn" onclick="copyBkash()">কপি করুন</button>
+    </div>
+
+    <form>
+      <label>আপনার টেলিগ্রামের ইউজারনেম</label>
+      <input type="text" name="telegram" required>
+
+      <label>আপনার নাম</label>
+      <input type="text" name="name" required>
+
+      <label>টাকার পরিমাণ</label>
+      <input type="number" name="amount" required>
+
+      <label>ট্রানজেকশন আইডি</label>
+      <input type="text" name="trxid" required>
+
+      <label>যে বিকাশ নাম্বার থেকে পাঠিয়েছেন (শেষ ৪ ডিজিট)</label>
+      <input type="number" name="bkash_last4" required>
+
+      <button type="submit">সাবমিট করুন</button>
+    </form>
   </div>
+
+  <script>
+    function copyBkash() {
+      const bkashNumber = document.getElementById("bkashNum").innerText;
+      navigator.clipboard.writeText(bkashNumber).then(function() {
+        alert("বিকাশ নাম্বার কপি হয়েছে!");
+      });
+    }
+  </script>
 
 </body>
 </html>
