@@ -1,120 +1,121 @@
-<!DOCTYPE html>
-<html lang="bn">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Paid Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bangla Sub Studio</title>
   <style>
-    body {
-      font-family: Arial;
-      background-color: #f5f5f5;
+    * {
+      box-sizing: border-box;
       margin: 0;
-      padding: 20px;
+      padding: 0;
     }
-    .form-container {
-      max-width: 500px;
-      margin: auto;
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('image.jpg'); /* Use your uploaded background image */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: white;
     }
-    .form-container h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .bkash-box {
-      background-color: #ffe7d1;
-      padding: 10px;
-      border: 1px solid #ff9900;
-      border-radius: 6px;
-      margin-bottom: 20px;
+    header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-weight: bold;
+      padding: 10px 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
     }
-    .bkash-number {
-      font-size: 16px;
-      color: #cc3300;
+    header h1 {
+      font-size: 20px;
     }
-    .copy-btn {
-      padding: 5px 10px;
-      font-size: 13px;
-      background-color: #ff6600;
+    header img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+    }
+    .container {
+      margin-top: 80px;
+      text-align: center;
+      padding: 20px;
+    }
+    .welcome {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .promo-img {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto 20px;
+    }
+    .button-section {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+    .btn {
+      background-color: #ff4d4d;
       color: white;
+      padding: 10px 20px;
       border: none;
-      border-radius: 4px;
+      border-radius: 10px;
+      font-size: 18px;
+      width: 90%;
+      max-width: 350px;
       cursor: pointer;
     }
-    .copy-btn:hover {
-      background-color: #e65c00;
-    }
-    label {
+    .desc {
       font-size: 14px;
-      font-weight: bold;
-      display: block;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
-    input[type="text"], input[type="number"] {
-      width: 100%;
+    .bottom-links {
+      margin-top: 50px;
+      font-size: 13px;
+      color: lightgray;
+    }
+    .bikas-box {
+      margin-top: 30px;
+      background: rgba(0, 0, 0, 0.5);
       padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      border-radius: 10px;
+      display: inline-block;
     }
-    button[type="submit"] {
-      width: 100%;
-      padding: 12px;
-      background-color: #0099ff;
-      color: white;
+    .bikas-box button {
+      margin-left: 10px;
+      padding: 5px 10px;
       border: none;
-      border-radius: 6px;
-      font-size: 16px;
+      background: #ffc107;
+      color: black;
+      border-radius: 5px;
       cursor: pointer;
-    }
-    button[type="submit"]:hover {
-      background-color: #007acc;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Bangla Sub Studio</h1>
+    <img src="profile.jpg" alt="Profile">
+  </header>  <div class="container">
+    <div class="welcome">Welcome to our Bangla Sub Studio</div><img class="promo-img" src="main-anime.png" alt="Anime Image">
 
-  <div class="form-container">
-    <h2>নিম্নে উল্লেখিত বিকাশ নাম্বারে আপনার ফি পাঠিয়ে ফর্ম পূরণ করুন</h2>
-    
-    <div class="bkash-box">
-      <span class="bkash-number" id="bkashNum">01887852687</span>
-      <button class="copy-btn" onclick="copyBkash()">কপি করুন</button>
-    </div>
+<div class="button-section">
+  <button class="btn" onclick="location.href='paid-form.html'">Premium Account Form</button>
+  <div class="desc">পেইড একাউন্টে ঢোকার জন্য ফরম পূরণ করুন</div>
 
-    <form>
-      <label>আপনার টেলিগ্রামের ইউজারনেম</label>
-      <input type="text" name="telegram" required>
+  <button class="btn" onclick="window.open('https://t.me/BANGLA_SUB', '_blank')">Free Anime</button>
+  <div class="desc">ফিলার, মুভি ও প্রতিদিনের আপডেট</div>
 
-      <label>আপনার নাম</label>
-      <input type="text" name="name" required>
+  <button class="btn" onclick="window.open('https://t.me/Mahdi_vai_0', '_blank')">Report</button>
+  <div class="desc">কোন প্রকার সমস্যা হলে জানান</div>
+</div>
 
-      <label>টাকার পরিমাণ</label>
-      <input type="number" name="amount" required>
+<div class="bikas-box">
+  <span>01887852687</span>
+  <button onclick="copyBkash()">কপি করুন</button>
+</div>
 
-      <label>ট্রানজেকশন আইডি</label>
-      <input type="text" name="trxid" required>
-
-      <label>যে বিকাশ নাম্বার থেকে পাঠিয়েছেন (শেষ ৪ ডিজিট)</label>
-      <input type="number" name="bkash_last4" required>
-
-      <button type="submit">সাবমিট করুন</button>
-    </form>
-  </div>
-
-  <script>
-    function copyBkash() {
-      const bkashNumber = document.getElementById("bkashNum").innerText;
-      navigator.clipboard.writeText(bkashNumber).then(function() {
-        alert("বিকাশ নাম্বার কপি হয়েছে!");
-      });
-    }
-  </script>
-
-</body>
-</html>
+<div class="bottom-links">
+  <p>About Us | Privacy Policy
